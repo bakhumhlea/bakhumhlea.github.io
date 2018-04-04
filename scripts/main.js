@@ -119,6 +119,7 @@ $('.projects-btn').on('click',function() {
         $('.projects-page .bottom-border').removeClass('ready');
         $('.projects-page .left-border').removeClass('ready');
     } else {
+        displayImgNum(projectProp.currentProjectIndex, 0)
         autoSlideImg(projectProp.currentProjectIndex);
         toggleNavBtn('projects-btn');
         openPage('projects-page');

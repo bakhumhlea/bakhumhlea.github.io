@@ -181,32 +181,25 @@ div.projects::-webkit-scrollbar-thumb {
     width: 100%;
     overflow-x: hidden;
     justify-content: center;
-    //*border-right: 1px solid #424242;*/
 }
-/*.projects .projects-list li.project_01 {
-    transform: translate(-50%, 0);
-}
-.projects .projects-list li.project_02 {
-    transform: translate(50%, 0);
-}
-.projects .projects-list li.project_03 {
-    transform: translate(150%, 0);
-}
-.projects .projects-list li.project_04 {
-    transform: translate(250%, 0);
-}
-.projects .projects-list li.project_05 {
-    transform: translate(350%, 0);
-}*/
 .projects .projects-list li .canvas {
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: right;
+    padding: 8px 10px 0 0;
     background-position: center top;
     background-size: 100% auto;
     background-image: url('../assets/images/pomotimer-01.jpg');
     transition: 0.8s 0s all ease-in-out;
+}
+.projects.opened .projects-list li .canvas:hover {
+    cursor: pointer;
 }
 .projects .projects-list li .project-desc {
     position: absolute;

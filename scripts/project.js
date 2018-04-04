@@ -1,43 +1,55 @@
-$( document ).ready(function() {
-    
-});
 
 var projectProp = {
     imgTimer : undefined,
     imgLength : undefined,
+    imgNumText : 1,
     currentProjectIndex : 0,
     currentImgIndex : 0,
 }
 
 function btnColor(index) {
     var textColor = projectsList[index].textColor;
+    $('.canvas').css('color', textColor);
     $('.prev-btn').css('color', textColor);
     $('.next-btn').css('color', textColor);
     $('.desc-dismiss-btn').css('color', textColor);
 };
 
 function autoSlideImg(index){
-    console.log('start timer');
     var project = projectsList[index];
     var targetProject = `#project_0${index+1} .canvas`;
     projectProp.imgLength = project.imgSrc.length;
-    projectProp.currentProjectIndex = index;
+    projectProp.currentProjectIndex = index+1;
+    for(var n=0; n < projectsList.length; n++){
+        if (n!==index) {
+            $(`#project_0${n+1} .canvas`).css('background-image', `url(${projectsList[n].imgSrc[0]})`);
+        }
+    }
     if (project.imgSrc.length > 1) {
-         projectProp.imgTimer = setInterval(()=>{
-            if ( projectProp.currentImgIndex < projectProp.imgLength-1 ) {
-                var imgUrl = `url(${project.imgSrc[projectProp.currentImgIndex]})`;
-                $(targetProject).css('background-image', imgUrl);
-                projectProp.currentImgIndex++;
+        projectProp.imgTimer = setInterval(()=>{
+            if ( projectProp.currentImgIndex < projectProp.imgLength ) {
+                console.log(projectProp.currentImgIndex+1);
+                displayImgNum(index, projectProp.currentImgIndex);
+                var attr = `url(${project.imgSrc[projectProp.currentImgIndex]})`;
+                $(targetProject).css('background-image', attr);
+                var c = (projectProp.currentImgIndex+1)===projectProp.imgLength?projectProp.currentImgIndex=0:projectProp.currentImgIndex++;
             } else {
-                var imgUrl = `url(${project.imgSrc[0]})`;
-                $(targetProject).css('background-image', imgUrl);
+                displayImgNum(index, 0);
+                var attr = `url(${project.imgSrc[0]})`;
+                $(targetProject).css('background-image', attr);
                 projectProp.currentImgIndex = 0;
             }
         }, 4000);
     } else {
-        var imgUrl = `url(${project.imgSrc[0]})`;
-        $(targetProject).css('background-image', imgUrl);
+        displayImgNum(index, 0);
+        var attr = `url(${project.imgSrc[0]})`;
+        $(targetProject).css('background-image', attr);
     }
+};
+function displayImgNum(proIndex, index) {
+    var target = `#project_0${proIndex+1} .canvas`;
+    var imgSlideNum = `0${index+1}/0${projectsList[proIndex].imgSrc.length}`;
+    $(target).text(imgSlideNum);
 };
 
 function translate_project_list() {
@@ -47,7 +59,6 @@ function translate_project_list() {
     var projects_mid_line = projects_left + (projects_width / 2);
     var projects_each_left = [];
     var object = $(this).hasClass('next-btn');
-    console.log($(this).hasClass('next-btn'));
     $.each($projects, function() {
         var $el = $(this);
         var el_width = $el.outerWidth();
@@ -60,25 +71,28 @@ function translate_project_list() {
             var translateX = object?(i+1)*(-100):(i-1)*(-100);
             var projectIndex = object?i+1:i-1;
             btnColor(projectIndex);
+            displayImgNum(projectIndex, 0);
             autoSlideImg(projectIndex);
             $('.projects-list').css(
                 'transform', "translate("+translateX+"%, 0)"
             );
-            return console.log('break');
+            return
         } else if (projects_mid_line > projects_each_left[i] && i===projects_each_left.length-1 && object ) {
             btnColor(0);
+            displayImgNum(0, 0);
             autoSlideImg(0);
             $('.projects-list').css(
                 'transform', "translate(0%, 0)"
             );
-            return console.log('to first');
+            return
         } else if (projects_mid_line > projects_each_left[i] && i===0 && !object) {
+            displayImgNum(projects_each_left.length-1, 0);
             btnColor(projects_each_left.length-1);
             autoSlideImg(projects_each_left.length-1);
             $('.projects-list').css(
                 'transform', "translate("+ ((projects_each_left.length-1)*(-100)) +"%, 0)"
             );
-            return console.log('to last');
+            return
         }
     }
 }
