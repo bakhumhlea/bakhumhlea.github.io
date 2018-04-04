@@ -16,14 +16,14 @@ body {
     color: #424242;
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #f9fbdc;
+    background-color: #f3fffd;
 }
 a {
     color: inherit;
     text-decoration: none;
 }
 .main-page {
-    z-index: 70;
+    z-index: 60;
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -31,41 +31,34 @@ a {
 .main-page .site-logo {
     cursor: default;
     position: absolute;
-    top: 38px;
+    top: 30px;
     left: 50%;
     width: 38px;
     height: 38px;
     color: white;
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     font-weight: 900;
     text-align: center;
     border-radius: 50%;
     background-color: #424242;
     transform: translate(-50%,-50%);
     opacity: 0;
-    transition: 0.3s 1s all ease-in-out;
+    transition: 0.3s 0.3s all ease-in-out;
 }
 .main-page .site-logo.ready {
-    top: 45px;
-    opacity: 1;
+    top: 38px;
+    opacity: 0.3;
 }
 .main-page div.site-logo:hover {
     text-shadow: rgba(250,250,250,1) 0 0 4px;
     box-shadow: 0 0 10px 1px rgba(0,0,0,0.3);
+    opacity: 1;
     transition: 0.3s 0s all ease-in-out;
-}
-.main-page .content-frame {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 70vw;
-    height: 70vh;
-    transform: translate(-50%,-50%);
 }
 .main-page .page-nav {
     position: absolute;
     bottom: 4px;
-    left: 50%;
+    left: 50.5%;
     width: max-content;
     color: #424242;
     font-family: 'Questrial', 'sans-serif';
@@ -76,8 +69,8 @@ a {
 }
 .main-page .page-nav.ready {
     bottom: 10px;
-    opacity: 1;
     transition: 0.3s 1s all ease-in-out;
+    opacity: 1;
 }
 .main-page .page-nav li {
     cursor: pointer;
@@ -86,6 +79,12 @@ a {
     padding: 2px 10px 2px 10px;
     border-bottom: 0 solid #424242;
     transition: 0.3s 0s all ease-in-out;
+}
+.main-page .page-nav.ready li {
+    opacity: 0.7;
+}
+.main-page .page-nav.ready li.respond {
+    opacity: 1;
 }
 .main-page .page-nav li span {
     position: relative;
@@ -102,76 +101,39 @@ a {
     background-color: #424242;
     transition: 0.3s 0s all ease-in-out;
 }
-.main-page .page-nav li.respond span {
+.main-page .page-nav li.respond span,
+.main-page .page-nav li.active span {
     bottom: 3px;
+    font-weight: 900;
 }
-.main-page .page-nav li.respond div {
+.main-page .page-nav li.respond div,
+.main-page .page-nav li.active div {
     content: ' ';
     width: 100%;
 }
-.content-frame .site-name  {
+.site-name  {
+    z-index: 10;
     position: absolute;
     top: 50%;
     left: 50%;
     width: max-content;
-    color: rgba(66, 66, 66, 0);
+    color: rgba(141, 146, 65, 0);
     justify-content: center;
-    font-size: 4rem;
+    font-size: 1.6rem;
     transform: translate(-50%, -50%);
     transition: 0.3s 1s all ease-in-out;
 }
-.content-frame .site-name.ready {
-    color: rgba(66, 66, 66, 1);
+.site-name.ready {
+    color: rgba(141, 146, 65, 1);
+    transition: 0.6s 0.5s all ease-in-out;
 }
-.content-frame .site-name h1 {
+.site-name.ready.opened {
+    color: rgba(141, 146, 65, 0);
+    transition: 0.3s 0s all ease-in-out;
+}
+.site-name h1 {
     font-family: 'IBM Plex Serif', serif;
 }
-.content-frame .site-name h1 span {
+.site-name h1 span {
     font-weight: 900;
-}
-.content-frame .top-border {
-    position: absolute;
-    top: 0;
-    height: 2px;
-    width: 0;
-    background-color: #424242;
-    transition: 0.8s 0.2s all ease-in-out;
-}
-.content-frame .top-border.ready {
-    width: 100%;
-}
-.content-frame .right-border {
-    position: absolute;
-    right: 0;
-    height: 0;
-    width: 2px;
-    background-color: #424242;
-    transition: 0.8s 0.2s all ease-in-out;
-}
-.content-frame .right-border.ready {
-    height: 100%;
-}
-.content-frame .bottom-border {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 2px;
-    width: 0;
-    background-color: #424242;
-    transition: 0.8s 0.2s all ease-in-out;
-}
-.content-frame .bottom-border.ready {
-    width: 100%;
-}
-.content-frame .left-border {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 2px;
-    background-color: #424242;
-    transition: 0.8s 0.2s all ease-in-out;
-}
-.content-frame .left-border.ready {
-    height: 100%;
 }

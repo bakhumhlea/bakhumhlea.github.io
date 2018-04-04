@@ -1,0 +1,261 @@
+.prev-btn {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 45px;
+    height: 45px;
+    color: #424242;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.2s 0s all ease-in-out;
+}
+.projects-page.opened .projects .prev-btn:hover {
+    cursor: pointer;
+    transform: translateX(-4px);
+}
+.prev-btn.opened {
+    bottom: 28%;
+}
+.next-btn {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 45px;
+    height: 45px;
+    color: #424242;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.2s 0s all ease-in-out;
+}
+.projects-page.opened .projects .next-btn:hover {
+    cursor: pointer;
+    transform: translateX(4px);
+}
+.next-btn.opened {
+    cursor: pointer;
+    bottom: 28%;
+}
+.desc-dismiss-btn {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    width: 45px;
+    height: 45px;
+    color: #424242;
+    font-size: 2.1rem;
+    text-align: center;
+    border-radius: 50%;
+    transform: translate(-50%,0);
+    transition: 0.2s 0s all ease-in-out;
+}
+.projects-page.opened .projects  .desc-dismiss-btn:hover {
+    cursor: pointer;
+    bottom: 4px;
+}
+.desc-dismiss-btn.ion-ios-close-empty.opened {
+    bottom: 28%;
+}
+.projects-page.opened .projects .desc-dismiss-btn.ion-ios-close-empty.opened:hover {
+    cursor: pointer;
+    bottom: calc(28% + 4px);
+}
+.desc-dismiss-btn.ion-ios-information-outline {
+    font-size: 1.8rem;
+}
+.projects-page {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75vw;
+    height: 75vh;
+    background-color: transparent;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.4s 0s all ease-in-out;
+}
+.projects-page.opened {
+    display: block;
+    z-index: 50;
+    background-color: #f3fffd;
+    opacity: 1;
+    transition: 0.3s 0.3s all ease-in-out;
+}
+.projects-page .top-border {
+    z-index: 85;
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 0;
+    background-color: #424242;
+    transition: 0.3s 0s all ease-in-out;
+}
+.projects-page .top-border.ready {
+    width: 100%;
+    transition: 0.5s 0.7s all ease-in-out;
+}
+.projects-page .right-border {
+    z-index: 85;
+    position: absolute;
+    right: 0;
+    height: 0;
+    width: 2px;
+    background-color: #424242;
+    transition: 0.3s 0s all ease-in-out;
+}
+.projects-page .right-border.ready {
+    height: 100%;
+    transition: 0.5s 0.7s all ease-in-out;
+}
+.projects-page .bottom-border {
+    z-index: 85;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background-color: #424242;
+    transition: 0.3s 0s all ease-in-out;
+}
+.projects-page .bottom-border.ready {
+    width: 100%;
+    transition: 0.5s 0.7s all ease-in-out;
+}
+.projects-page .left-border {
+    z-index: 85;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 2px;
+    background-color: #424242;
+    transition: 0.3s 0s all ease-in-out;
+}
+.projects-page .left-border.ready {
+    height: 100%;
+    transition: 0.5s 0.7s all ease-in-out;
+}
+.projects-page .projects {
+    z-index: 10;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(50%,-50%);
+    width: 75vw;
+    height: 75vh;
+    color: #424242;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: none;
+    opacity: 0;
+    transition: 0.3s 0.1s all ease-in-out;
+}
+.projects-page.opened .projects {
+    display: block;
+    opacity: 1;
+    transition: 0.5s 1.2s all ease-in-out;
+}
+div.projects::-webkit-scrollbar {
+    height: 4px;
+    bottom: 4px;
+}
+div.projects::-webkit-scrollbar-thumb {
+    height: 4px;
+    border-radius: 3px;
+    background-color: #424242;
+}
+.projects .projects-list {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    list-style-type: none;
+    transform: translate(0%, 0);
+    transition: 0.6s 0s all ease-in-out;
+}
+.projects .projects-list li {
+    display: inline;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    justify-content: center;
+    //*border-right: 1px solid #424242;*/
+}
+/*.projects .projects-list li.project_01 {
+    transform: translate(-50%, 0);
+}
+.projects .projects-list li.project_02 {
+    transform: translate(50%, 0);
+}
+.projects .projects-list li.project_03 {
+    transform: translate(150%, 0);
+}
+.projects .projects-list li.project_04 {
+    transform: translate(250%, 0);
+}
+.projects .projects-list li.project_05 {
+    transform: translate(350%, 0);
+}*/
+.projects .projects-list li .canvas {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center top;
+    background-size: 100% auto;
+    background-image: url('../assets/images/pomotimer-01.jpg');
+    transition: 0.8s 0s all ease-in-out;
+}
+.projects .projects-list li .project-desc {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: 0%;
+    padding: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s 0s all ease-in-out;
+}
+.projects .projects-list li .project-desc.opened {
+    height: 30%;
+    opacity: 1;
+}
+.projects .projects-list li .project-desc div {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    padding: 10px;
+    /*border: 1px solid #424242;*/
+    text-align: left;
+    overflow: hidden;
+}
+.projects .projects-list li .project-desc div.col_01 {
+    padding-top: 10px;
+    left: 0;
+    width: 20%;
+    line-height: 2rem;
+}
+.projects .projects-list li .project-desc div.col_01 ._title {
+    padding-top: 6px;
+}
+.projects .projects-list li .project-desc div.col_01 ._title span {
+    font-size: 3.4rem;
+}
+.projects .projects-list li .project-desc div.col_02 {
+    width: 48%;
+}
+.projects .projects-list li .project-desc div.col_03 {
+    width: 30%;
+}
+.projects .projects-list li .project-desc div h5,
+.projects .projects-list li .project-desc div p {
+    display: block;
+    width: 100%;
+    font-size: 0.74rem;
+}
+.projects .projects-list li .project-desc div p {
+    font-style: italic;
+}
