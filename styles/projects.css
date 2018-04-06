@@ -55,11 +55,11 @@
     bottom: 4px;
 }
 .desc-dismiss-btn.ion-ios-close-empty.opened {
-    bottom: 28%;
+    bottom: 29%;
 }
 .projects-page.opened .projects .desc-dismiss-btn.ion-ios-close-empty.opened:hover {
     cursor: pointer;
-    bottom: calc(28% + 4px);
+    bottom: calc(29% + 4px);
 }
 .desc-dismiss-btn.ion-ios-information-outline {
     font-size: 1.8rem;
@@ -237,8 +237,16 @@ div.projects::-webkit-scrollbar-thumb {
 .projects .projects-list li .project-desc div.col_01 ._title span {
     font-size: 3.4rem;
 }
+.projects .projects-list li .project-desc div.col_01 ._title a {
+    color: #6dc52a;
+}
 .projects .projects-list li .project-desc div.col_02 {
     width: 48%;
+}
+.projects .projects-list li .project-desc div.col_02 p a {
+    color: #c52a39;
+    font-weight: 600;
+    text-decoration: underline;
 }
 .projects .projects-list li .project-desc div.col_03 {
     width: 30%;
@@ -251,4 +259,19 @@ div.projects::-webkit-scrollbar-thumb {
 }
 .projects .projects-list li .project-desc div p {
     font-style: italic;
+}
+.project-link a {
+    color: #c52a39;
+    font-family: 'Questrial','sans-serif';
+    font-size: 0.82rem;
+    font-style: normal;
+    font-weight: 600;
+    padding-right: 3px;
+}
+.project-link a span {
+    font-size: 0.95rem;
+    margin-right: 4px;
+}
+.project-link a:hover {
+    text-decoration: underline;
 }

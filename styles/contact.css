@@ -27,12 +27,17 @@
     transform: translate(-50%, -50%);
 }
 .contact-page .all-element-frame .name-card {
-    cursor: pointer;
+    cursor: default;
     position: relative;
     height: 200px;
+    color: rgb(172, 178, 76);
     text-align: center;
     background-color: #fffff2;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    transition: 0.8s 0s all ease-in-out;
+}
+.contact-page .all-element-frame .name-card.flipped {
+    transform: rotateX(180deg);
 }
 .contact-page .all-element-frame .name-card .my-name {
     cursor: default;
@@ -44,11 +49,11 @@
     font-weight: 900;
     margin: auto 0 auto 0;
     transform: translate(0, -50%);
-    transition: 0.7s 0.3s all ease-in-out;
+    transition: 0.1s 0.4s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card.flipped .my-name {
     opacity: 0;
-    transition: 0.4s 0s all ease-in-out;
+    transition: 0.1s 0.3s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card .bracket-left {
     display: block;
@@ -56,11 +61,11 @@
     font-size: 5rem;
     margin: 0 0 0 40px;
     opacity: 0;
-    transition: 0.5s 0s all ease-in-out;
+    transition: 0.1s 0.3s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card.flipped .bracket-left {
     opacity: 1;
-    transition: 0.5s 0.3s all ease-in-out;
+    transition: 0.1s 0.4s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card .bracket-right {
     display: block;
@@ -68,29 +73,29 @@
     font-size: 5rem;
     margin: 0 40px 0 0;
     opacity: 0;
-    transition: 0.5s 0s all ease-in-out;
+    transition: 0.1s 0.3s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card.flipped .bracket-right {
     opacity: 1;
-    transition: 0.5s 0.3s all ease-in-out;
+    transition: 0.1s 0.4s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card .contact-detail {
     cursor: default;
     position: absolute;
     display: block;
-    top: 48%;
-    left: 50%;
+    top: 35%;
+    left: 22.5%;
     line-height: 30px;
     font-size: 16px;
     font-weight: 900;
     margin: auto 0 auto 0;
-    transform: translate(-50%, -50%);
+    transform: rotateX(180deg);
     opacity: 0;
-    transition: 0.5s 0s all ease-in-out;
+    transition: 0.1s 0.3s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card.flipped .contact-detail {
     opacity: 1;
-    transition: 0.5s 0.3s all ease-in-out;
+    transition: 0.1s 0.4s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card .social-contact {
     position: absolute;
@@ -99,36 +104,24 @@
     font-size: 16px;
     text-align: center;
     opacity: 1;
-    transition: 0.7s 0.3s all ease-in-out;
+    transition: 0.1s 0.4s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card.flipped .social-contact {
     opacity: 0;
-    transition: 0.4s 0s all ease-in-out;
+    transition: 0.1s 0.3s all ease-in-out;
 }
 .contact-page .all-element-frame .name-card .social-contact a {
     cursor: pointer;
+    position: relative;
     display: inline-block;
-    width: 27px;
-    height: 27px;
-    border: 1px solid #424242;
-    border-radius: 50%;
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
     margin: 0 6px 0 6px;
+    transition: 0.4s 0s all ease-in-out;
 }
-.contact-page .all-element-frame .name-card .social-contact a.ion-ios-email:hover {
-    color: white;
-    background-color: #424242;
-}
-.contact-page .all-element-frame .name-card .social-contact a.ion-social-twitter:hover {
-    color: white;
-    background-color: #424242;
-}
-.contact-page .all-element-frame .name-card .social-contact a.ion-social-github:hover {
-    color: white;
-    background-color: #424242;
-}
-.contact-page .all-element-frame .name-card .social-contact a.ion-social-linkedin:hover {
-    color: white;
-    background-color: #424242;
+.contact-page .all-element-frame .name-card .social-contact a:hover {
+    bottom: 4px;
 }
 .contact-page .all-element-frame .namecard-btn {
     position: relative;

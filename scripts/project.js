@@ -20,28 +20,27 @@ function autoSlideImg(index){
     var targetProject = `#project_0${index+1} .canvas`;
     projectProp.imgLength = project.imgSrc.length;
     projectProp.currentProjectIndex = index+1;
-    for(var n=0; n < projectsList.length; n++){
+    /*for(var n=0; n < projectsList.length; n++){
         if (n!==index) {
             $(`#project_0${n+1} .canvas`).css('background-image', `url(${projectsList[n].imgSrc[0]})`);
         }
-    }
+    }*/
     if (project.imgSrc.length > 1) {
         projectProp.imgTimer = setInterval(()=>{
             if ( projectProp.currentImgIndex < projectProp.imgLength ) {
-                console.log(projectProp.currentImgIndex+1);
-                displayImgNum(index, projectProp.currentImgIndex);
+                //displayImgNum(index, projectProp.currentImgIndex);
                 var attr = `url(${project.imgSrc[projectProp.currentImgIndex]})`;
                 $(targetProject).css('background-image', attr);
                 var c = (projectProp.currentImgIndex+1)===projectProp.imgLength?projectProp.currentImgIndex=0:projectProp.currentImgIndex++;
             } else {
-                displayImgNum(index, 0);
+                //displayImgNum(index, 0);
                 var attr = `url(${project.imgSrc[0]})`;
                 $(targetProject).css('background-image', attr);
                 projectProp.currentImgIndex = 0;
             }
         }, 4000);
     } else {
-        displayImgNum(index, 0);
+        //displayImgNum(index, 0);
         var attr = `url(${project.imgSrc[0]})`;
         $(targetProject).css('background-image', attr);
     }
@@ -71,7 +70,7 @@ function translate_project_list() {
             var translateX = object?(i+1)*(-100):(i-1)*(-100);
             var projectIndex = object?i+1:i-1;
             btnColor(projectIndex);
-            displayImgNum(projectIndex, 0);
+            //displayImgNum(projectIndex, 0);
             autoSlideImg(projectIndex);
             $('.projects-list').css(
                 'transform', "translate("+translateX+"%, 0)"
@@ -79,14 +78,14 @@ function translate_project_list() {
             return
         } else if (projects_mid_line > projects_each_left[i] && i===projects_each_left.length-1 && object ) {
             btnColor(0);
-            displayImgNum(0, 0);
+            //displayImgNum(0, 0);
             autoSlideImg(0);
             $('.projects-list').css(
                 'transform', "translate(0%, 0)"
             );
             return
         } else if (projects_mid_line > projects_each_left[i] && i===0 && !object) {
-            displayImgNum(projects_each_left.length-1, 0);
+            //displayImgNum(projects_each_left.length-1, 0);
             btnColor(projects_each_left.length-1);
             autoSlideImg(projects_each_left.length-1);
             $('.projects-list').css(

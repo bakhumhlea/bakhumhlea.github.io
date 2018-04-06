@@ -22,13 +22,20 @@ $( document ).ready(function(){
         var w = $(this).width();
         var h = $(this).height();
         if (w/h < 1.63 ){
-            $('.canvas').animate({
-                backgroundSize: 'auto 100%'
-            },0);
+            $('.canvas').css(
+                'background-size', 'auto 100%'
+            );
         } else {
-            $('.canvas').animate({
-                backgroundSize: '100% auto'
-            },0);
+            $('.canvas').css(
+                'background-size', '100% auto'
+            );
+        }
+        var meW = ($(this).width()*40)/100;
+        var meH = $(this).height();
+        if (meW/meH < 0.66) {
+            $('.my-img').css('background-size', 'auto 100%');
+        } else {
+            $('.my-img').css('background-size', '100% auto');
         }
     });
     btnColor(0);
@@ -37,17 +44,15 @@ $( document ).ready(function(){
 var $projects = $('.projects li');
 
 $( window ).on('resize', function(){
-    var w = ($(this).width()*40)/100;
-    var h = $(this).height();
-    console.log(w);
-    console.log(h);
-    console.log(w/h)
-    if (w/h < 0.66) {
+
+});
+function resizeMe(width, height) {
+    if (((w*40)/100)/h < 0.66) {
         $('.my-img').css('background-size', 'auto 100%');
     } else {
         $('.my-img').css('background-size', '100% auto');
     }
-});
+}
 
 var $page_nav = $('.page-nav li');
 
@@ -119,7 +124,7 @@ $('.projects-btn').on('click',function() {
         $('.projects-page .bottom-border').removeClass('ready');
         $('.projects-page .left-border').removeClass('ready');
     } else {
-        displayImgNum(projectProp.currentProjectIndex, 0)
+        //displayImgNum(projectProp.currentProjectIndex, 0)
         autoSlideImg(projectProp.currentProjectIndex);
         toggleNavBtn('projects-btn');
         openPage('projects-page');

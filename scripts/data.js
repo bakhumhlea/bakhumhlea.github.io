@@ -2,10 +2,10 @@ const projectsList = [
     {
         name: 'pomotimer',
         imgSrc: [
-            'assets/images/pomotimer-01.jpg',
-            'assets/images/pomotimer-02.jpg',
             'assets/images/pomotimer-03.jpg',
+            'assets/images/pomotimer-02.jpg',
             'assets/images/pomotimer-04.jpg',
+            'assets/images/pomotimer-01.jpg',
         ],
         textColor: 'white'
     },
@@ -29,14 +29,9 @@ const projectsList = [
     {
         name: 'djtatuu',
         imgSrc: [
-            'assets/images/djTatuu-01.jpg'
-        ],
-        textColor: 'white'
-    },
-    {
-        name: 'djtatuu',
-        imgSrc: [
-            'assets/images/djTatuu-01.jpg'
+            'assets/images/djTatuu-01.jpg',
+            'assets/images/djTatuu-02.jpg',
+            'assets/images/djTatuu-03.jpg'
         ],
         textColor: 'white'
     }
